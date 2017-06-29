@@ -20,6 +20,27 @@ class JobsController < ApplicationController
     end
   end
 
+  def edit
+    @job = Job.find(params[:id])
+  end
+
+  def update
+    @job = Job.find(params[:id])
+    if @job.update(job_params)
+      redirect_to jobs_path
+      flash[:notice] = "新增职位成功！！！"
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @job = Job.find(params[:id])
+    @job.destroy
+    redirect_to jobs_path
+    flash[:alert] = "你已成功删除职位！！！"
+  end
+
   private
 
   def job_params

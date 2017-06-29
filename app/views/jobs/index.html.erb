@@ -3,16 +3,15 @@
     <%= link_to("新增职位", new_job_path, class: "btn btn-primary pull-right")%>
   </div>
   <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>职位名称</th>
-        <th>创建时间</th>
-      </tr>
-    </thead>
     <tbody>
       <% @jobs.each do |job| %>
         <tr>
           <td><%= link_to(job.title, job_path(job))%></td>
+          <td>
+            <%= link_to("编辑", edit_job_path(job), class: "btn btn-primary btn-sm") %>
+            <%= link_to("删除", job_path(job), class: "btn btn-warning btn-sm",
+                        method: :delete, data: { confirm: "你确定删除吗？"})%>
+          </td>
           <td><%= job.created_at %></td>
         </tr>
       <% end %>
