@@ -14,7 +14,7 @@ class Admin::JobsController < ApplicationController
     @job = Job.new
   end
 
-  def cretae
+  def create
     @job = Job.new(job_params)
     if @job.save
       redirect_to admin_jobs_path
@@ -31,7 +31,7 @@ class Admin::JobsController < ApplicationController
     @job = Job.find(params[:id])
     if @job.update(job_params)
       redirect_to admin_jobs_path
-      flash[:notice] = " 修改陈功！！！"
+      flash[:notice] = " 修改成功！！！"
     else
       render :edit
     end
