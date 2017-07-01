@@ -6,6 +6,7 @@
     <%= f.input :wage_lower_bound, label: "薪资下限"%>
     <%= f.input :wage_upper_bound, :label => "薪资上限"%>
     <%= f.input :contact_email, label: "电子邮箱"%>
+    <%= f.input :is_hidden, label: "隐藏"%>
   </div>
   <%= f.submit "提交", class: "btn btn-primary", data: { disable_with: "Submiting..."}%>
 <% end %>
