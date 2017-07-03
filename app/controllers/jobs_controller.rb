@@ -7,6 +7,11 @@ class JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
+
+    if @job.is_hidden
+      redirect_to root_path
+      flash[:warning] = "抱歉，你无权查看！"
+    end
   end
 
   def new

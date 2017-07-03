@@ -10,7 +10,7 @@
           <td><%= link_to(job.title, job_path(job))%></td>
           <td>
             <%= link_to("编辑", edit_job_path(job), class: "btn btn-primary btn-sm") %>
-            <%= link_to("删除", job_path(job), class: "btn btn-warning btn-sm",
+            <%= link_to("删除", job_path(job), class: "btn btn-danger btn-sm",
                         method: :delete, data: { confirm: "你确定删除吗？"})%>
           </td>
           <td><%= job.created_at %></td>

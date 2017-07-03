@@ -1,6 +1,6 @@
 <div class="col-md-12">
   <div class="pull-right">
-    <%= link_to("添加职位", new_admin_job_path, class: "btn btn-primary")%>
+    <%= link_to new_admin_job_path, class: "btn btn-primary" do %><l class="fa fa-plus"></l>&nbsp;添加职位<% end %>
   </div>
   <br><br>
 
@@ -12,9 +12,16 @@
         <%= link_to(job.title, admin_job_path(job))%>
       </td>
       <td>
-        <%= link_to("编辑", edit_admin_job_path(job), class: "btn btn-sm btn-primary")%>
-        <%= link_to("删除", admin_job_path(job), class: "btn btn-sm btn-warning",
-                    method: :delete, data: { confirm: "你确定删除吗？"})%>
+        <%= link_to edit_admin_job_path(job), class: "btn btn-sm btn-primary" do%><l class="fa fa-pencil"></l>编辑<% end %>
+        <%= link_to admin_job_path(job), class: "btn btn-sm btn-danger",
+                    method: :delete, data: { confirm: "你确定删除吗？"} do %><l class="fa fa-trash">删除</l>
+        <% end %>
+
+        <% if job.is_hidden %>
+          <%= link_to publish_admin_job_path(job), method: :post, class: "btn btn-sm btn-success" do %><l class="fa fa-unlock"></l>公开<% end %>
+        <% else %>
+          <%= link_to hide_admin_job_path(job), method: :post, class: "btn btn-sm btn-warning" do %><l class="fa fa-lock"></l>隐藏<% end %>
+        <% end %>
       </td>
       <td>
         <%= job.created_at%>
