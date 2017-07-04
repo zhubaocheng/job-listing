@@ -1,0 +1,13 @@
+<h2>投个简历到<%= @job.title %></h2>
+<hr>
+<div class="col-md-12">
+  <%= simple_form_for [@job,@resume] do |f| %>
+    <div class="form-group">
+      <%= f.input :content, label: "简历信息", input_html: { class: "form-control"} %>
+      <%= f.input :attachment, label: "📎上传附件简历" %>
+    </div>
+    <div class="form-actions">
+      <%= f.submit "提交", diasble_with: "Subming...", :class => "btn btn-primary"%>
+    </div>
+  <% end %>
+</div>
