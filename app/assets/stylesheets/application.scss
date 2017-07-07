@@ -18,6 +18,35 @@
 @import "bootstrap";
 @import "font-awesome";
 
+.navbar-default {
+  background-color: #3d3d3d;
+  border          : none;
+  border-radius   : 0;
+  margin-bottom   : 0;
+}
+
+.navbar-default .navbar-brand {
+  color      : #fff;
+  padding    : 10px 15px; //上下10px,左右15px
+  line-height: 30px; //文字行高
+  font-size  : 25px;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #fff;
+}
+@media (min-width: 768px) {
+  .navbar {
+    border-radius: 0; //圆角为0
+  }
+}
+
+.container-fluid .jumbotron {
+  padding-bottom: 110px; //内部的底部边距，这样按钮不会很靠近底部了
+  margin        : 0 -15px 20px; //顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
+  border-radius : 0; //圆角为0
+}
+
 .jumbotron {
   background-image : url('https://ws4.sinaimg.cn/large/006tNbRwly1fhbe7hhve0j31gi0dxtm7.jpg');
   background-repeat: no-repeat;
