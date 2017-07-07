@@ -19,30 +19,31 @@
 @import "font-awesome";
 
 .jumbotron {
-  background-image : url("https://www.winstonresources.com/wp-content/uploads/2016/06/searchjobs.jpg");
+  background-image : url('https://ws4.sinaimg.cn/large/006tNbRwly1fhbe7hhve0j31gi0dxtm7.jpg');
   background-repeat: no-repeat;
   background-size  : cover;
   padding-bottom   : 110px;
+  color            : white;
 }
 
 .title {
   font-family  : "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
-  text-align   : center;
-  margin-top   : 200px;
-  margin-bottom: 80px;
+  text-align   : left;
+  margin-top   : 80px;
+  margin-bottom: 50px;
 }
 
 .slogan {
   margin-top   : 10px;
   margin-bottom: 50px;
-  text-align   : center;
+  text-align   : left;
   color        : white;
   top          : 12px;
 }
 
 .lead {
   margin-bottom: 60px;
-  text-align   : center;
+  text-align   : left;
   color        : white;
 }
 
