@@ -21,7 +21,6 @@
 .navbar-default {
   background-color: #233140;
   border-color    : #233140;
-  margin-bottom   : 0;
   border-radius   : 0;
 }
 
@@ -67,6 +66,7 @@
   max-height: 700px;
   position  : relative;
   background: #000000;
+  margin-top: -20px;
 }
 
 .bs-slider:hover {
