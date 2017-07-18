@@ -8,7 +8,7 @@
 
 puts "這個種子檔會自動建立一個admin帳號, 並且創建 10 個 public jobs, 以及10個hidden jobs"
 
-create_account = User.create([email: 'adfgasfd@gmail.com', password: '888888', password_confirmation: '888888', is_admin: 'true'])
+create_account = User.create([email: 'test@gmail.com', password: '888888', password_confirmation: '888888', is_admin: 'true'])
 puts "Admin account created."
 
 jobs_info = [['招聘RoR工程师', '全栈工程师能力'],
