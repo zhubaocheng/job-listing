@@ -23,16 +23,22 @@ jobs_info = [['招聘RoR工程师', '全栈工程师能力'],
   ['招聘高级JAVA研发工程师', 'java技术开发能力'],
   ['招聘高级数据挖掘工程师', '数据挖掘能力']]
 
+company_info = [['阿里巴巴', '杭州'],['腾讯', '深圳'],['百度', '北京'],['京东', '北京'],
+               ['平安陆金所', '上海'],['美团网', '北京'],['Fittime', '无锡'],
+               ['膜拜单车', '上海'],['搜狐', '广州'],['新浪', '苏州'],['网易', '广州']]
+
+
 create_jobs = for i in 1..10 do
   job_test = jobs_info[rand(0..10)]
+  company_test = company_info[rand(0..10)]
   Job.create!([title: job_test[0], description: job_test[1], wage_lower_bound: rand(10..49)*100,
-              wage_upper_bound: rand(50..300)*100, is_hidden: false])
+              wage_upper_bound: rand(50..300)*100, company: company_test[0], city: company_test[1], experience: rand(1..10)年, is_hidden: false])
 end
 puts "10 Public jobs created."
 
 create_jobs = for i in 1..10 do
   job_test = jobs_info[rand(0..10)]
   Job.create!([title: job_test[0], description: job_test[1], wage_lower_bound: rand(10..49)*100,
-              wage_upper_bound: rand(50..200)*100, is_hidden: true])
+              wage_upper_bound: rand(50..200)*100, company: company_test[0], city: company_test[1], experience: rand(1..10)年, is_hidden: true])
 end
 puts "10 hidden jobs created."
