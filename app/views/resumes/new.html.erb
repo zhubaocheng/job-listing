@@ -1,20 +1,24 @@
-<div class="col-md-12">
-  <div class="panel panel-default">
-    <!-- Default panel contents -->
-    <div class="panel-heading">
-      <h3>编辑职位</h3>
-    </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">
+          <h3>编辑职位</h3>
+        </div>
 
-    <div class="panel-body">
-      <%= simple_form_for [@job,@resume] do |f| %>
-        <div class="form-group">
-            <%= f.input :content, label: "简历信息", input_html: { class: "form-control"} %>
-            <%= f.input :attachment, label: "📎上传附件简历" %>
+        <div class="panel-body">
+          <%= simple_form_for [@job,@resume] do |f| %>
+            <div class="form-group">
+                <%= f.input :content, label: "简历信息", input_html: { class: "form-control"} %>
+                <%= f.input :attachment, label: "📎上传附件简历" %>
+            </div>
+            <div class="form-actions">
+              <%= f.submit "提交", diasble_with: "Subming...", :class => "btn btn-primary"%>
+            </div>
+          <% end %>
         </div>
-        <div class="form-actions">
-          <%= f.submit "提交", diasble_with: "Subming...", :class => "btn btn-primary"%>
-        </div>
-      <% end %>
+      </div>
     </div>
   </div>
 </div>
