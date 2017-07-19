@@ -2,12 +2,27 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand" href="/" style="margin-left: 5em;">352 Offer</a>
+            <a class="navbar-brand" href="/" style="margin-left: 5em;"><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fhp5ruuvxqj305k015q3m.jpg"></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right" style="margin-right: 5em;">
+
+
+              <!--=== 搜索栏 ===-->
+              <%= form_tag search_jobs_path, :method => :get, class: "navbar-form navbar-left" do %>
+                <div class="input-group search-box">
+                  <input type="text" class="form-control" name="keyword" placeholder="搜索职位、公司或地点" value="<%= params[:keyword] %>">
+                  <div class="input-group-btn">
+                    <button class="btn btn-default" type="submit">
+                      <i class="fa fa-search"></i>
+                    </button>
+                  </div>
+                </div>
+              <% end %>
+
+
                 <li>
                     <% if !current_user %>
                       <li><a href="#" data-toggle="modal" data-target="#signup-modal">注册</a></li>
@@ -35,6 +50,8 @@
     </div>
     <!-- /.container-fluid -->
 </nav>
+
+
 
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
   <div class="modal-dialog" role="document">

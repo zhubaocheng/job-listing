@@ -115,6 +115,7 @@ input[type=password]:hover {
   font-size: 12px;
 }
 //---------Navbar---------
+
 .navbar-default {
   background-color: #233140;
   border-color    : #233140;
@@ -189,6 +190,28 @@ input[type=password]:hover {
 .bs-slider > .carousel-inner > .item > img {
   margin: auto;
   width : 100% !important;
+}
+//---------搜索框---------
+
+.input-group {
+  position       : relative;
+  display        : table;
+  border-collapse: separate;
+}
+
+.search-box {
+  margin-top: 10px;
+
+  input {
+    min-width: 225px !important;
+  }
+}
+
+.search-error {
+  text-align   : center;
+  min-height   : 325px;
+  margin-top   : 250px;
+  margin-bottom: 50px;
 }
 /********************
 *****Slide effect
@@ -544,6 +567,13 @@ input[type=password]:hover {
   }
 }
 //---------Content---------
+
+.page-title {
+  margin-top    : 75px;
+  margin-bottom : -100px;
+  color         : #333;
+  letter-spacing: 1px;
+}
 
 .content-section-a {
   padding         : 50px 0;
