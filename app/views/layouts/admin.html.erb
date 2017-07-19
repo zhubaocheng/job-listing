@@ -14,13 +14,15 @@
         <div class="row">
           <%= render "common/navbar" %>
           <%= render "common/flashes"%>
-            <div class="col-md-2">
-              <ul class="nav nav-pills nav-stacked" style="max-width: 300px; padding-top:20px;">
-                <li class="active"><%= link_to admin_jobs_path do %><i class="fa fa-briefcase" aria-hidden="true">
-                    </i>&nbsp; 职位<% end %>
-                </li>
-              </ul>
-            </div>
+
+              <div class="col-md-2" style="margin-top: 3.5em;">
+                <ul class="nav nav-pills nav-stacked" style="max-width: 300px; padding-top:20px;">
+                  <li class="active"><%= link_to admin_jobs_path do %><i class="fa fa-briefcase" aria-hidden="true">
+                      </i>&nbsp; 职位<% end %>
+                  </li>
+                </ul>
+              </div>
+
 
             <div class="col-md-10">
               <%= yield %>
