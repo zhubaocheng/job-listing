@@ -582,8 +582,109 @@ input[type=password]:hover {
 }
 //---------Content---------
 
+.job-box .company-bot {
+  margin-left   : 3.5px;
+  letter-spacing: 1px;
+}
+
+.job-box .company span {
+  width      : 20px;
+  margin-left: 5px;
+}
+
+.job-box .company-top {
+  color         : #4A6BB5;
+  font-size     : 18px;
+  letter-spacing: 0.5px;
+  margin-left   : -5px;
+}
+
+.job-box .company {
+  float    : left;
+  display  : inline;
+  max-width: 35%;
+}
+
+.job-box .info-mid {
+  color         : #FF7D0A;
+  letter-spacing: -1px;
+}
+
+.job-box div {
+  margin-bottom: 5px;
+}
+
+.job-box .info-top span {
+  margin-left: 10px;
+  display    : inline;
+  color      : #888;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color      : inherit;
+}
+
+.h1,
+.h2,
+.h3,
+h1,
+h2,
+h3 {
+  margin-top   : 20px;
+  margin-bottom: 10px;
+}
+
+.job-box .info-top h3 {
+  display  : inline;
+  font-size: 20px;
+}
+
+.job-box div {
+  margin-bottom: 5px;
+}
+
+.job-box .info {
+  display  : inline;
+  float    : left;
+  min-width: 65%;
+}
+
+.job-box {
+  border          : 1.5px solid #ddd;
+  box-shadow      : 1px 1px 5px #ccc;
+  margin-top      : 12.5px;
+  padding         : 15px 1px 1px;
+  background-color: #fff;
+  color           : #555;
+  font-size       : 16px;
+  width           : 800px;
+}
+// .row {
+//   margin-left : -15px;
+//   margin-right: -15px;
+// }
+
+.job-content {
+  min-height: 725px;
+  margin-top: 100px;
+}
+
 .page-title {
-  margin-top    : 75px;
+  // margin-top    : 75px;
   margin-bottom : -100px;
   color         : #233140;
   letter-spacing: 1px;
