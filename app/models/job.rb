@@ -1,6 +1,6 @@
 class Job < ApplicationRecord
   has_many :resumes
-  validates_presence_of :title, :description
+  validates_presence_of :title, :description, :company, :city, :experience, :contact_email
   validates_presence_of :wage_upper_bound
   validates_presence_of :wage_lower_bound
   validates :wage_lower_bound, numericality: { greater_than: 0}

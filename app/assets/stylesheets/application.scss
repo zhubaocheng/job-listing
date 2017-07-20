@@ -193,25 +193,39 @@ input[type=password]:hover {
 }
 //---------搜索框---------
 
-.input-group {
-  position       : relative;
-  display        : table;
-  border-collapse: separate;
+.job-list li {
+  padding      : 22px 40px;
+  border-bottom: 1px #F2F2F5 solid;
+  overflow     : hidden;
 }
 
-.search-box {
-  margin-top: 10px;
-
-  input {
-    min-width: 225px !important;
-  }
+.job-primary {
+  overflow: hidden;
+  color   : #4a4160;
 }
+
+.job-primary .info-primary {
+  float: left;
+  color: #4a4160;
+}
+
+.info-company {
+  float: right;
+}
+//---------搜索页面---------
 
 .search-error {
   text-align   : center;
   min-height   : 325px;
   margin-top   : 250px;
   margin-bottom: 50px;
+  color        : #666666;
+}
+
+.s_position_list .con_list_item {
+  color     : #555;
+  border    : 1px solid #ededed;
+  margin-top: 18px;
 }
 /********************
 *****Slide effect
@@ -571,7 +585,7 @@ input[type=password]:hover {
 .page-title {
   margin-top    : 75px;
   margin-bottom : -100px;
-  color         : #333;
+  color         : #233140;
   letter-spacing: 1px;
 }
 
