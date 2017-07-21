@@ -1,12 +1,12 @@
 <div class="container" style="margin-top: 5em;">
   <div class="row">
     <div class="col-md-12">
-      <div class="panel panel-default">
-        <!-- Default panel contents -->
-        <div class="panel-heading">
-          <h3>正在热招的职位
-            <!-- Split button -->
-            <div class="btn-group pull-right">
+        <!--=== 搜索结果，有符合条件的数据 ===-->
+         <!--=== 搜索结果文字 ===-->
+      <div class="row">
+        <div class="page-title">
+          <h1><span class="fa fa-search"></span> 正在热招的职位
+            <div class="btn-group">
               <button type="button" class="btn btn-primary">按需求排序</button>
               <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                 <span class="caret"></span>
@@ -17,37 +17,54 @@
                 <li><%= link_to("按发布时间排序", jobs_path )%></li>
               </ul>
             </div>
-          </h3>
-        </div>
-        <!-- Table -->
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th>招聘职位</th>
-              <th>薪资范围</th>
-              <th>公司</th>
-              <th>工作地点</th>
-              <th>工作经验</th>
-              <th>发布时间</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @jobs.each do |job| %>
-              <tr>
-                <td><%= link_to(job.title, job_path(job)) %></td>
-                <td><%= job.wage_lower_bound %>~<%= job.wage_upper_bound %></td>
-                <td><%= job.company %></td>
-                <td><%= job.city %></td>
-                <td><%= job.experience %></td>
-                <td><%= job.created_at %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-        <div class="text-center">
-          <%= will_paginate @jobs %>
+          </h1>
         </div>
       </div>
+
+
+        <!--=== 搜索结果内容 ===-->
+        <div class="col-md-10 job-content">
+          <div class="row">
+            <!--=== 左侧区块 ===-->
+            <% @jobs.each do |job| %>
+              <div class="col-md-9 col-xs-12 job-box">
+                <!--=== 职位信息 ===-->
+                <div class="col-md-6 col-xs-12 info">
+                  <div class="info-top">
+                    <h3><%= link_to(job.title, job_path(job), target: "_blank" )%></h3><span><%= job.created_at.strftime("%Y-%m-%d") %></span>
+                  </div>
+                  <div class="info-mid">
+                    <%= job.wage_lower_bound %> ~ <%= job.wage_upper_bound %>
+                  </div>
+                  <div class="info-bot">
+                    <span class="fa fa-clock-o"></span>&nbsp;&nbsp;<span><%= job.experience %>年工作经验<span>
+                  </div>
+                </div>
+
+                <!--=== 公司信息 ===-->
+                <div class="col-md-6 col-xs-12 company">
+                  <div class="company-top">
+                    <span><%= link_to(job.company, job_path(job))%></span>
+                  </div>
+                  <div class="company-mid">
+                    <span class="fa fa-envelope"></span><span><%= job.contact_email %></span>
+                  </div>
+                  <div class="company-bot">
+                    <span class="fa fa-map-marker"></span><span><%= job.city %></span>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <!--=== 换页区块 ===-->
+        <div class="col-md-10 col-md-offset-1 job-bottom">
+          <% if @jobs.present? %>
+              <div class="text-center">
+                <%= will_paginate(@jobs, renderer: BootstrapPagination::Rails) %>
+              </div>
+          <% end %>
+        </div>
     </div>
   </div>
 </div>
