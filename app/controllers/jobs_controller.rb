@@ -60,8 +60,8 @@ class JobsController < ApplicationController
     if @query_string.present?
       # 显示符合关键字的公开职位 #
       search_result = Job.ransack(@search_criteria).result(:distinct => true)
-      @jobs = search_result.published.paginate(:page => params[:page], :per_page => 10 )
-    end  
+      @jobs = search_result.published.paginate(:page => params[:page], :per_page => 5)
+    end
   end
 
   protected
