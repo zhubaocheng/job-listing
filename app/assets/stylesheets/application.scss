@@ -116,6 +116,55 @@ input[type=password]:hover {
 }
 //---------Navbar---------
 
+.info-container .signup {
+  margin-left: 10px;
+}
+
+.primary-button {
+  font-family       : "PingFangSC-Medium", "sans-serif";
+  font-size         : 14px;
+  color             : #5d6472;
+  text-align        : center;
+  display           : inline-block;
+  box-sizing        : border-box;
+  background        : rgba(255,255,255,0);
+  border            : 1px solid #c3ccd9;
+  border-radius     : 4px;
+  padding           : 0 20px;
+  cursor            : pointer;
+  line-height       : 32px;
+  transition        : ease-in 0.2s;
+  -webkit-transition: ease-in 0.2s;
+  -moz-transition   : ease-in 0.2s;
+  -o-transition     : ease-in 0.2s;
+  background        : #17b1f7;
+  border            : 1px solid #17b1f7;
+  color             : #fff;
+}
+
+.default-button {
+  font-family       : "PingFangSC-Medium", "sans-serif";
+  font-size         : 14px;
+  color             : #ffffff;
+  text-align        : center;
+  display           : inline-block;
+  box-sizing        : border-box;
+  background        : rgba(255,255,255,0);
+  border            : 1px solid #c3ccd9;
+  border-radius     : 4px;
+  padding           : 0 20px;
+  cursor            : pointer;
+  line-height       : 32px;
+  -webkit-transition: ease-in 0.2s;
+}
+
+.info-container {
+  float      : right;
+  line-height: 53px;
+  right      : 10px;
+  top        : 0;
+}
+
 .navbar-default {
   background-color: #233140;
   border-color    : #233140;
