@@ -116,6 +116,11 @@ input[type=password]:hover {
 }
 //---------Navbar---------
 
+.navbar-right {
+  float       : right !important;
+  margin-right: 0;
+}
+
 .info-container .signup {
   margin-left: 10px;
 }

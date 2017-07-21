@@ -9,19 +9,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <!--=== 搜索栏 ===-->
-                <%= form_tag search_jobs_path, :method => :get, class: "navbar-form navbar-right" do %>
-                  <div class="input-group search-box">
-                    <input type="text" class="form-control" name="keyword" placeholder="搜索职位、公司或地点" value="<%= params[:keyword] %>">
-                    <div class="input-group-btn">
-                      <button class="btn btn-default" type="submit">
-                        <i class="fa fa-search"></i>
-                      </button>
-                    </div>
-                  </div>
-                <% end %>
-
-                <li>
+                <li class="divider" role="separator"></li>
                     <% if !current_user %>
                       <div class="info-container">
                         <a class="default-button signin" href="#" data-toggle="modal" data-target="#login-modal">登录</a>
@@ -45,6 +33,19 @@
                         </ul>
                       </li>
                     <% end %>
+                </li>
+                <li>
+                  <!--=== 搜索栏 ===-->
+                  <%= form_tag search_jobs_path, :method => :get, class: "navbar-form navbar-right" do %>
+                    <div class="input-group search-box">
+                      <input type="text" class="form-control" name="keyword" placeholder="搜索职位、公司或地点" value="<%= params[:keyword] %>">
+                      <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit">
+                          <i class="fa fa-search"></i>
+                        </button>
+                      </div>
+                    </div>
+                  <% end %>
                 </li>
             </ul>
         </div>
