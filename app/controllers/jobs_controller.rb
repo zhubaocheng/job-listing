@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :collect, :quit_collect]
   before_action :validate_search_key, only: [:search]
 
   def index
@@ -62,6 +62,30 @@ class JobsController < ApplicationController
       search_result = Job.ransack(@search_criteria).result(:distinct => true)
       @jobs = search_result.published.paginate(:page => params[:page], :per_page => 5)
     end
+  end
+
+  def collect
+    @job = Job.find(params[:id])
+    if !current_user.has_collected?(@job)
+      current_user.collect!(@job)
+      flash[:notice] = "收藏成功！"
+    else
+      flash[:warning] = "工作已被成功收藏！"
+    end
+
+    redirect_to :back
+  end
+
+  def quit_collect
+    @job = Job.find(params[:id])
+    if current_user.has_collected?(@job)
+      current_user.quit_collect!(@job)
+      flash[:alert] = "已取消收藏！"
+    else
+      flash[:warning] = "此工作未被收藏！"
+    end
+
+    redirect_to :back
   end
 
   protected

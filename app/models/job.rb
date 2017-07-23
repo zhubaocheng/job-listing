@@ -6,6 +6,10 @@ class Job < ApplicationRecord
   validates :wage_lower_bound, numericality: { greater_than: 0}
   validates :wage_upper_bound, numericality: { greater_than: 0}
 
+  has_many :job_collections
+  has_many :collectors, through: :job_collections, source: :user
+
+
   scope :published, -> { where(is_hidden: false)}
   scope :recent, -> { order("created_at DESC")}
 
