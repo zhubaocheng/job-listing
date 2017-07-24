@@ -1,26 +1,71 @@
 <div class="container" style="margin-top: 5em;">
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1">
-        <!--=== 搜索结果，无符合条件的数据 ===-->
-      <% if @jobs.blank?%>
-          <div class="search-error">
-            <h2>暂时没有符合该搜索条件的职位</h2>
-            <br/>
-            <h4>请重新修改搜索条件后再进行搜索</h4>
-            <br/><br/>
-            <p><%= link_to("立即查看工作", jobs_path, class: "btn btn-lg btn-success") %></p>
-          </div>
-      <% else %>
-        <!--=== 搜索结果，有符合条件的数据 ===-->
-         <!--=== 搜索结果文字 ===-->
-        <div class="col-md-10 col-md-offset-1 page-title">
-          <h1><span class="fa fa-search"></span> 搜索结果
-          </h1>
+  <div class="col-md-10 col-md-offset-1">
+    <!--=== 搜索结果，无符合条件的数据 ===-->
+    <% if @jobs.blank?%>
+      <div class="row">
+        <div class="search-error">
+          <h2>暂时没有符合该搜索条件的职位</h2>
+          <br/>
+          <h4>请重新修改搜索条件后再进行搜索</h4>
+          <br/>
+          <br/>
+          <p><%= link_to("立即查看工作", jobs_path, class: "btn btn-lg btn-success") %></p>
         </div>
-
-        <%= render "form" %>
-        
-      <% end %>
-    </div>
+      </div>
+    <% else %>
+      <!--=== 搜索结果，有符合条件的数据 ===-->
+      <!--=== 搜索结果文字 ===-->
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1 page-title">
+          <h1><span class="fa fa-search"></span> 搜索结果</h1>
+        </div>
+      </div>
+      <div class="row">
+      <!--=== 左侧区块 ===-->
+        <% @jobs.each do |job| %>
+          <div class="col-md-10 col-md-offset-1 col-xs-12 job-box">
+            <!--=== 职位信息 ===-->
+            <div class="col-md-6 col-xs-12 info">
+              <div class="info-top">
+                <h3><%= link_to(job.title, job_path(job), target: "_blank" )%></h3>
+                <span><%= job.created_at.strftime("%Y-%m-%d") %></span>
+              </div>
+              <div class="info-mid">
+                <%= job.wage_lower_bound %> ~ <%= job.wage_upper_bound %>
+              </div>
+              <div class="info-bot">
+                <span class="fa fa-clock-o"></span>&nbsp;&nbsp;<span><%= job.experience %>年工作经验<span>
+              </div>
+            </div>
+            <!--=== 公司信息 ===-->
+            <div class="col-md-6 col-xs-12 company">
+              <div class="company-top">
+                <span><%= link_to(job.company, job_path(job))%></span>
+                <% if current_user && current_user.has_collected?(job)%>
+                  <%= link_to quit_collect_job_path(job), method: :post do%>
+                    <i class="fa fa-bookmark" aria-hidden="true"></i>
+                  <% end %>
+                <% else %>
+                  <%= link_to collect_job_path(job), method: :post do %>
+                    <i class="fa fa-bookmark-o" aria-hidden="true"></i>
+                  <% end %>
+                <% end %>
+              </div>
+              <div class="company-mid">
+                <span class="fa fa-envelope"></span><span><%= job.contact_email %></span>
+              </div>
+              <div class="company-bot">
+                <span class="fa fa-map-marker"></span><span><%= job.city %></span>
+              </div>
+            </div>
+          </div>
+        <% end %>
+        <div class="col-md-10 col-md-offset-1 job-bottom">
+          <div class="text-center">
+            <%= will_paginate(@jobs, renderer: BootstrapPagination::Rails) %>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
