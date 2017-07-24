@@ -116,6 +116,11 @@ input[type=password]:hover {
 }
 //---------Navbar---------
 
+.navbar-fixed-top {
+  top         : 0;
+  border-width: 0 0 1px;
+}
+
 .navbar-right {
   float       : right !important;
   margin-right: 0;
