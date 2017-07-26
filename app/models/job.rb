@@ -8,6 +8,7 @@ class Job < ApplicationRecord
 
   has_many :job_collections
   has_many :collectors, through: :job_collections, source: :user
+  belongs_to :user
 
 
   scope :published, -> { where(is_hidden: false)}
