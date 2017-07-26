@@ -18,7 +18,7 @@
                     <% else %>
                       <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                          您好,<%= current_user.email %><b class="caret"></b>
+                          您好,<%= current_user.display_name %><b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
                           <% if current_user.admin? %>
@@ -84,7 +84,7 @@
         <%= f.error_notification %>
         <div class="form-inputs">
           <%= f.input :email, label: '邮箱', error: '请输入邮箱', required: true, autofocus: true %>
-          <%= f.input :username, label: '用户名', require: true%>
+          <%= f.input :username, label: '用户名', required: true%>
           <%= f.input :is_admin, as: :radio_buttons, label: false, collection: [['应聘者', false], ['企业用户', true]], required: true%>
           <%= f.input :password, label: '密码', error: '请输入密码', required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
           <%= f.input :password_confirmation, label: '密码确定', error: '请再次输入密码', required: true %>
