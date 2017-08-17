@@ -18,6 +18,10 @@
 @import "bootstrap-sprockets";
 @import "font-awesome";
 @import url(http://fonts.googleapis.com/css?family=Roboto);
+
+.col-md-12 {
+  padding: 0;
+}
 /****** LOGIN MODAL ******/
 .loginmodal-container {
   padding         : 30px;
@@ -800,8 +804,12 @@ body {
 
 footer {
   color           : white;
-  padding         : 25px 0;
+  padding         : 40px 0;
   background-color: #233140;
+}
+
+footer a:hover {
+  color: #17bef7;
 }
 // footer .footer-below {
 //   padding         : 25px 0;
@@ -853,4 +861,111 @@ footer {
       }
     }
   }
+}
+//--------show
+
+.position-head {
+  background-color: #ebf0ef;
+  padding         : 30px 0 11px;
+  width           : 100%;
+  min-width       : 1024px;
+}
+
+.position-head .position-content {
+  position: relative;
+  width   : 1024px;
+  height  : 174px;
+  margin  : 0 auto;
+}
+
+.position-head .position-content .position-content-l {
+  float: left;
+}
+
+.position-head .position-content .position-content-l .job-name {
+  margin: 0 0 13px;
+}
+
+.position-head .position-content .position-content-l .job-name .company {
+  margin   : -2px 0 8px;
+  font-size: 14px;
+  color    : #555;
+  position : relative;
+  left     : 2px;
+}
+
+.position-head .position-content .position-content-l .job-name .name {
+  position   : relative;
+  font-size  : 36px;
+  color      : #333;
+  line-height: 36px;
+}
+
+.position-head .position-content .position-content-l .job_request {
+  margin-top: 2px;
+  font-size : 18px;
+  color     : #555;
+}
+
+dd,
+dl,
+dt {
+  margin: 0;
+}
+
+.position-head .position-content .position-content-l .job_request p .salary {
+  color: #fd5f39;
+}
+
+.position-head .position-content .position-content-r {
+  right : 0;
+  bottom: 11px;
+}
+
+.position-head .position-content .position-content-r .position-deal {
+  position: relative;
+}
+
+.position-head .position-content .position-content-r .position-deal .resume-deliver {
+  position: relative;
+  float   : right;
+}
+
+.position-head .position-content .position-content-r .position-deal .resume-deliver .btn_apply {
+  margin-left     : 17px;
+  padding         : 0 30px;
+  border          : 1px solid #00b38a;
+  border-radius   : 3px;
+  height          : 44px;
+  line-height     : 44px;
+  font-size       : 18px;
+  background-color: #00b38a;
+  color           : #fff;
+  cursor          : pointer;
+}
+
+.fr {
+  float: right;
+}
+
+.position-head .position-content .position-content-r .position-deal .jd_collection {
+  float           : right;
+  display         : inline-block;
+  height          : 44px;
+  width           : 104px;
+  line-height     : 44px;
+  text-align      : center;
+  border          : 1px solid #00b38a;
+  border-radius   : 3px;
+  background-color: #ebf0ef;
+  cursor          : pointer;
+  font-size       : 14px;
+  color           : #00b38a;
+}
+
+.position-head .position-content .position-content-r .position-deal .jd_collection i {
+  display       : inline-block;
+  margin-right  : 6px;
+  vertical-align: -2px;
+  font-size     : 18px;
 }

@@ -5,13 +5,56 @@
       <div class="group">
         <% if current_user && current_user.admin?%>
           <%= link_to("编辑职位", edit_job_path(@job), class: "btn btn-primary pull-right")%>
-          <%= link_to("投个简历", new_job_resume_path(@job), class: "btn btn-primary pull-right") %>
         <% end %>
+        <%= link_to("投个简历", new_job_resume_path(@job), class: "btn btn-primary pull-right") %>
       </div>
       <h2><%= @job.title %></h2>
       <p>
         <%= simple_format(@job.description)%>
       </p>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="position-head" >
+        <div class="position-content ">
+          <div class="position-content-l">
+            <div class="job-name" >
+              <div class="company"><%= @job.company %></div>
+              <span class="name"><%= @job.title %></span>
+              <div class="marEdit">
+              </div>
+            </div>
+            <dd class="job_request">
+              <p>
+                <span class="salary"><%= @job.wage_lower_bound %> ~ <%= @job.wage_upper_bound %></span>
+                <span>/<%= @job.city %> /</span>
+                <span>经验<%= @job.experience %>年 /</span>
+              </p>
+              <p><span><%= @job.created_at.strftime("%Y-%m-%d") %></span>&nbsp; 发布于352 offer</p>
+            </dd>
+          </div>
+          <div class="position-content-r clearfix">
+            <div class="position-deal clearfix">
+              <div class="resume-deliver">
+                <% if current_user && current_user.admin?%>
+                  <a rel="nofollow" href="/jobs/1/edit" title="登录" class="passport_login_pop btn fr btn_apply">编辑职位</a>
+                <% else %>
+                  <a rel="nofollow" href="/jobs/1/resumes/new" title="登录" class="passport_login_pop btn fr btn_apply">投个简历</a>
+                <% end %>
+              </div>
+              <a class="jd_collection passport_login_pop " id="login_position" rel="nofollow" href="javascript:;">
+                <i class="fa fa-bookmark-o"></i>收藏
+
+
+
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

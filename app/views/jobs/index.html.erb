@@ -118,11 +118,11 @@
               <span><%= link_to(job.company, job_path(job))%></span>
               <% if current_user && current_user.has_collected?(job)%>
                 <%= link_to quit_collect_job_path(job), method: :post do%>
-                  <i class="fa fa-bookmark" aria-hidden="true"></i>
+                  <i class="fa fa-bookmark" aria-hidden="true" title="取消收藏"></i>
                 <% end %>
               <% else %>
                 <%= link_to collect_job_path(job), method: :post do %>
-                  <i class="fa fa-bookmark-o" aria-hidden="true"></i>
+                  <i class="fa fa-bookmark-o" aria-hidden="true" title="收藏"></i>
                 <% end %>
               <% end %>
             </div>
